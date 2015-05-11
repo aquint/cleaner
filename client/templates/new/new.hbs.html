@@ -1,0 +1,52 @@
+<template name="new">
+  {{#contentFor "headerButtonLeft"}} 
+    <button data-ion-menu-toggle="left" class="button button-clear">
+      <i class="fa fa-bars"></i>
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}} 
+    <h1 class="title title-center">New Decision</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    {{#if currentUser}}
+      <button class="button-right button-clear button">
+        {{currentUser.profile.name}}
+        <a href="#"><i data-logout style="color: #FF7B7B" class="fa fa-times"></i></a>
+      </button>
+    {{/if}} 
+  {{/contentFor}}
+
+
+  {{#ionView}}
+    {{#ionContent}}
+    <div id="transition" class="padding">
+      <div class="ui grid">
+        <div class="row">
+          <div class="sixteen wide column">
+            {{> _newForm}}
+          </div>  
+        </div>    
+      </div>
+    </div>  
+    {{/ionContent}}
+  {{/ionView}}
+
+  {{#ionFooterBar}}
+    <button data-add-factor class="ui green labeled button pull-left">
+      <i class="plus icon"></i>
+      Add Factor
+    </button>
+    <button data-remove-factor class="ui disabled red labeled button pull-left">
+      <i class="remove icon"></i>
+      Remove
+    </button>
+    <div data-submit-decision class="ui large pink button">
+      <i class="save icon"></i>
+      Calculate
+    </div>  
+  {{/ionFooterBar}}
+</template>
+
+    
