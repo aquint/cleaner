@@ -4,6 +4,7 @@
 
 .free {
   border-bottom: none !important;
+  background: #3498db !important;
 }
 
 .transparent {
@@ -20,6 +21,26 @@
 
 .saved:before {
   line-height: normal !important;
+}
+.home{
+	background-color: #3498db ;
+	color: #fff;
+	h1,h2,h3,h4,h5,p,a,div{
+		color: #fff;
+	}
+	.field input[type=text]{
+	  margin-top: 5px;
+	  outline: none;
+	  border: none;
+	  height: 40px;
+	  line-height: 40px;
+	}
+	.ui.divider{
+		color: #fff;
+		::before, ::after{
+			border-color: #fff;
+		}
+	}
 }
 
 .no-padding-top {
