@@ -1,10 +1,10 @@
-Router.onBeforeAction(function() {
-  // if (!Meteor.user()) {
-  //   this.render('authenticate');
-  // } else {
-     this.next();
-  // }
-});
+// Router.onBeforeAction(function() {
+//   if (!Meteor.user()) {
+//     this.render('authenticate');
+//   } else {
+//      this.next();
+//   }
+// });
 
 Router.configure({
   layoutTemplate: "applicationLayout"
@@ -14,6 +14,12 @@ Router.route('/', {
   template: "home",
   name: "home",
   layoutTemplate: "homeLayout"
+  // onBeforeAction: function() {
+  //   var postalCode = Session.get('postalCode');
+  //   if (postalCode) {
+  //     Router.go("/tabs/one");
+  //   }
+  // }
 });
 
 Router.route('/authenticate', {

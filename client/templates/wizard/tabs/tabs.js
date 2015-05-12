@@ -2,6 +2,18 @@ Template.tabsOne.onRendered(function(){
   imgToSvg();
 });
 
+
+
+Template.tabsOne.helpers({
+  'recommendedHours': function() {
+    var rooms = Session.get('bedrooms');
+    var baths = Session.get('bathrooms');
+    var extras = Session.get('extras');
+    
+    return rooms + baths + extras;
+  }
+})
+
 Template.tabsOne.events({
   'click svg': function( e, tpl ){
     // target the svg object
@@ -22,6 +34,7 @@ Template.tabsOne.events({
       $(target).attr("class", "svg custom-icon replaced-svg selected");
       $(target).children().attr('fill', "#20A5A1");  
     };
+    Session.set('extras', $('svg.selected').length);
   }
 })
 
