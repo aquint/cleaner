@@ -12,7 +12,8 @@ Router.configure({
 
 Router.route('/', {
   template: "home",
-  name: "home"
+  name: "home",
+  layoutTemplate: "homeLayout"
 });
 
 Router.route('/authenticate', {
