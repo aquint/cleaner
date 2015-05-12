@@ -119,6 +119,7 @@ Template.tabsTwo.onRendered(function(){
 Template.tabsTwoCleanerDetail.onRendered(function(){
   Session.set('currentTab', 'tabs.two.chat-detail.about');
   $('.ui.rating').rating();
+  $('.datepicker').pickadate()
 })
 
 
