@@ -31,5 +31,44 @@ Router.map(function() {
   this.route('tabs.one', {path: '/tabs/one', layoutTemplate: 'tabsLayout'});
   this.route('tabs.two', {path: '/tabs/two', layoutTemplate: 'tabsLayout'});
   this.route('tabs.three', {path: '/tabs/three', layoutTemplate: 'tabsLayout'});
-  this.route('tabs.four', {path: '/tabs/four', layoutTemplate: 'tabsLayout'});
+
+  // Subtabs in cleaner detail page
+  this.route('tabs.two.cleaner-detail.about', {
+    path: '/tabs/two/cleaner-detail/about', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailAbout': {to: "subtabs"}
+    }
+  });
+  this.route('tabs.two.cleaner-detail.pricing', {
+    path: '/tabs/two/cleaner-detail/pricing', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailPricing': {to: "subtabs"}
+    }
+  });
+  this.route('tabs.two.cleaner-detail.book', {
+    path: '/tabs/two/cleaner-detail/book', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailBook': {to: "subtabs"}
+    }
+  });
+  this.route('tabs.two.cleaner-detail.reviews', {
+    path: '/tabs/two/cleaner-detail/reviews', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailReviews': {to: "subtabs"}
+    }
+  });
 });
+  
+
+
+
+
+

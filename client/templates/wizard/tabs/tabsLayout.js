@@ -2,11 +2,14 @@ Template.tabsLayout.rendered = function () {
   Session.set('currentTab', 'tabs.one');
 };
 
+// Tab One
+
 Template.tabsOne.onRendered(function(){
   Session.set('bedrooms', 1);
   Session.set('bathrooms', 1);
   Session.set('hours', 1);
 })
+
 
 Template.tabsOne.helpers({
   'bedroomCounter': function() {
@@ -88,3 +91,36 @@ Template.tabsOne.events({
     Session.set('hours', count);
   }
 })
+
+// Tab Two
+
+Template.tabsTwo.onRendered(function(){
+  Session.setDefault("slider", [20, 80]);
+
+  this.$("#slider").noUiSlider({
+    start: Session.get("slider"),
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 100
+    }
+  }).on('slide', function (ev, val) {
+    // set real values on 'slide' event
+    Session.set('slider', val);
+  }).on('change', function (ev, val) {
+    // round off values on 'change' event
+    Session.set('slider', [Math.round(val[0]), Math.round(val[1])]);
+  });
+  $('.ui.rating').rating();
+})
+
+// Tab Two Detail
+
+Template.tabsTwoCleanerDetail.onRendered(function(){
+  Session.set('currentTab', 'tabs.two.chat-detail.about');
+  $('.ui.rating').rating();
+})
+
+
+
+
