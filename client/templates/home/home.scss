@@ -37,9 +37,9 @@
 	}
 	.ui.divider{
 		color: #fff;
-		::before, ::after{
-			border-color: #fff;
-		}
+	}
+	.ui.divider::before, .ui.divider::after{
+		border-color: #fff;
 	}
 }
 
