@@ -1,0 +1,28 @@
+<template name="tabsOne">
+  {{#ionView}}
+    {{> _tabsHeader}}
+
+    {{#ionContent class="ui grid"}}
+      <div class="row">
+        <div class="column">
+          <div class="ui icon white message">
+            <i class="home icon"></i>
+            <div class="content">
+              <div class="header">
+                Your Kleen
+              </div>
+              <p>First, we need to learn a bit about your home.</p>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          How many rooms in your home?
+        </div>  
+      </div>    
+    {{/ionContent}}
+
+    {{> _tabs}}
+  {{/ionView}}
+</template>
