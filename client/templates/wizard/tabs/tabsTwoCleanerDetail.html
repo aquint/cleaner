@@ -1,0 +1,73 @@
+<template name="tabsTwoCleanerDetail">
+	{{> _tabsHeader}}
+
+	{{#ionContent class=""}}
+	<div class="ui centered grid" style="margin-top:0;">
+		<div class="row">
+			<div class="five wide centered column">
+				<img class="ui small circular image" src="http://semantic-ui.com/images/wireframe/square-image.png">
+			</div>
+			<div class="twelve wide centered columns">
+				<h3 class="margin-top">Pocket Rocket Cleaners</h3>
+				<div class="ui star rating" data-rating="2"></div>
+				<h6 class="no-margin-top">45 reviews <strong>3.9/4</strong></h6>
+			</div>
+		</div>
+	</div>
+	{{> _subTabs}}
+	<div>
+		{{>yield "subtabs"}}
+	</div>
+	{{/ionContent}}
+
+	{{> _tabs}}
+</template>
+
+<template name="tabsTwoCleanerDetailAbout">
+	<div class="ui two doubling cards">
+		<div class="card">
+			<div class="content">
+				<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div>
+		</div>
+		<div class="card">
+			<div class="content">
+				<div class="header text-center">BUSINESS FEATURES</div>
+				<div class="items-container">
+				  <div class="clean-item">
+				    <a style="width:30% !important; display: inline-block; margin: 0 25px 0 0;" class="image">
+				      <img style="max-width:100%;" src="http://semantic-ui.com/images/wireframe/image.png">
+				    </a>
+				    <div class="content" style="display: inline-block; width: 67%;">
+				      <a class="header">Cute Dog</a>
+				      <div class="description">
+				        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="CleanerDetailPricing">
+
+</template>
+<template name="tabsTwoCleanerDetailBook">
+</template>
+<template name="tabsTwoCleanerDetailReviews">
+	<div class="ui two doubling cards">
+		<div class="card">
+			<a href="#" class="content">
+				<img class="ui avatar image card-avatar" src="http://semantic-ui.com/images/wireframe/square-image.png">
+				<div class="header">Pocket Rocket Cleaners</div>
+				<div class="meta"><strong>Manager: Annie Smith</strong></div>
+				<p class="pricing"><span>27</span>/<small>hr</small></p>
+			</a>
+			<div class="extra content">
+				<div class="ui star rating" data-rating="2"></div><span style="margin-left:  10px;">3.6/4 43 reviews</span>
+			</div>
+		</div>
+	</div>
+</template>
