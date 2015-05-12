@@ -5,6 +5,7 @@ Template.tabsLayout.rendered = function () {
 Template.tabsOne.onRendered(function(){
   Session.set('bedrooms', 1);
   Session.set('bathrooms', 1);
+  Session.set('hours', 1);
 })
 
 Template.tabsOne.helpers({
@@ -28,6 +29,17 @@ Template.tabsOne.helpers({
       return "bathroom"
     } else {
       return "bathrooms"
+    }
+  },
+  'hoursCounter': function() {
+    return Session.get('hours');
+  },
+  'hoursText': function() {
+    var plural = Session.get('hours');
+    if (plural == 1) {
+      return "hour"
+    } else {
+      return "hours"
     }
   }
 });
@@ -60,5 +72,19 @@ Template.tabsOne.events({
       count--;  
     }
     Session.set('bathrooms', count);
+  },
+  'click [data-plus-hour]': function() {
+    var count = Session.get('hours');
+    count++;
+    Session.set('hours', count);
+  },
+  'click [data-minus-hour]': function() {
+    var count = Session.get('hours');
+    if (count <= 1) {
+      // do nothing
+    } else {
+      count--;  
+    }
+    Session.set('hours', count);
   }
 })
