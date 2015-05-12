@@ -63,16 +63,21 @@ a.content{
 }
 .pricing{
 	position: absolute;
-	top: 28%;
-	right: 8%;
+	top: 19%;
+  right: 2%;
 }
 .pricing>span{
-	font-size: 3em;
+	font-size: 1.5em;
 }
 .items-container{
 	padding: 10px;
 	.description p{
 		line-height: 1;
+	}
+}
+.cleaners-list .card{
+	.header, .meta{
+		width: 85%;
 	}
 }
 /*== Slider ==*/
