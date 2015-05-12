@@ -30,7 +30,7 @@ p.text-large{
 	padding-top: 0 !important;
 }
 .no-margin-top{
-	margin-top:0;
+	margin-top:0 !important;
 }
 .card-avatar{
 	float: left;
@@ -59,6 +59,12 @@ a.content{
 }
 .pricing>span{
 	font-size: 3em;
+}
+.items-container{
+	padding: 10px;
+	.description p{
+		line-height: 1;
+	}
 }
 /*== Slider ==*/
 .noUi-horizontal .noUi-handle {
