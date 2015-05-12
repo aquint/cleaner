@@ -18,11 +18,28 @@
       </div>
       <div class="row">
         <div class="center aligned column">
-          <p>How many rooms in your home?</p>
+          <p>How many rooms are in your home?</p>
+          
+            <p>{{bedroomCounter}} {{bedroomText}}</p>
+            <div class="ui buttons">
+              <div data-minus-bedroom class="ui button">Minus</div>
+              <div class="or"></div>
+              <div data-plus-bedroom class="ui positive button">Plus</div>
+            </div>
+          <br><br>
+          <p>What about bathrooms?</p>
+          
+            <p>{{bathroomCounter}} {{bathroomText}}</p>
+            <div class="ui buttons">
+              <div data-minus-bathroom class="ui button">Minus</div>
+              <div class="or"></div>
+              <div data-plus-bathroom class="ui positive button">Plus</div>
+            </div>
+          
         </div>  
       </div>
-      <div class="row">
-        <div class="center aligned column">
+      {{!-- <div class="row">
+        <div class="column">
           <div class="ui small button">
             <i class="minus icon"></i>  
           </div>
@@ -33,7 +50,7 @@
             <i class="plus icon"></i>  
           </div>
         </div>  
-      </div>    
+      </div>     --}}
       {{/ionContent}}
 
     {{> _tabs}}
