@@ -4,6 +4,14 @@ Template.home.onRendered(function(){
 
 Template.landing.events({
   'click [data-go-tabs]': function() {
-    Router.go("/tabs/one");
+    var postalCode = $('[name="postalcode"]').val();
+    
+    if (postalCode) {
+      Session.setPersistent("postalCode", postalCode);
+      Router.go("/tabs/one");  
+    } else {
+      alert('Please set your postal code');
+    }
+    
   }
 })

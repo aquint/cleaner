@@ -1,6 +1,32 @@
 Template.tabsOne.onRendered(function(){
-  $('.ui.dropdown') .dropdown();
-     /*
+  imgToSvg();
+});
+
+Template.tabsOne.events({
+  'click svg': function( e, tpl ){
+    // target the svg object
+    var target = e.currentTarget;
+
+    // make an array of all its classes
+    var classes = $(target).attr('class').split(' ');
+  
+    // check to see if that array contains the class: selected
+    var contains = _.contains(classes, "selected");
+
+    if (contains) {
+      // lets remove selected and restore the original classes
+      $(target).attr("class", "svg custom-icon replaced-svg")
+      $(target).children().attr('fill', "#000");  
+    } else {
+      // lets add selected
+      $(target).attr("class", "svg custom-icon replaced-svg selected");
+      $(target).children().attr('fill', "#20A5A1");  
+    };
+  }
+})
+
+function imgToSvg() {
+   /*
      * Replace all SVG images with inline SVG
      */
      jQuery('img.svg').each(function(){
@@ -31,33 +57,4 @@ Template.tabsOne.onRendered(function(){
               }, 'xml');
 
     });
-});
-
-Template.tabsOne.events({
-  'click svg': function( e, tpl ){
-
-
-
-    // target the svg object
-    var target = e.currentTarget;
-
-    // make an array of all its classes
-    var classes = $(target).attr('class').split(' ');
-  
-    // check to see if that array contains the class: selected
-    var contains = _.contains(classes, "selected");
-
-    if (contains) {
-      // lets remove selected and restore the original classes
-      $(target).attr("class", "svg custom-icon replaced-svg")
-      $(target).children().attr('fill', "#000");  
-    } else {
-      // lets add selected
-      $(target).attr("class", "svg custom-icon replaced-svg selected");
-      $(target).children().attr('fill', "#20A5A1");  
-    };
-
-    
-  }
-})
-
+}
