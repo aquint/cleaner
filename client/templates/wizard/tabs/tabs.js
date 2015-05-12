@@ -6,6 +6,7 @@ Template.tabsOne.onRendered(function(){
 
 Template.tabsOne.helpers({
   'recommendedHours': function() {
+    Session.setDefault('extras', 0);
     var rooms = Session.get('bedrooms');
     var baths = Session.get('bathrooms');
     var extras = Session.get('extras');
