@@ -35,10 +35,29 @@ Template.tabsOne.onRendered(function(){
 
 Template.tabsOne.events({
   'click svg': function( e, tpl ){
-    
+
+
+
+    // target the svg object
     var target = e.currentTarget;
-    console.log(target); 
-    $(target).children().attr('fill', '#77CF92');
+
+    // make an array of all its classes
+    var classes = $(target).attr('class').split(' ');
+  
+    // check to see if that array contains the class: selected
+    var contains = _.contains(classes, "selected");
+
+    if (contains) {
+      // lets remove selected and restore the original classes
+      $(target).attr("class", "svg custom-icon replaced-svg")
+      $(target).children().attr('fill', "#000");  
+    } else {
+      // lets add selected
+      $(target).attr("class", "svg custom-icon replaced-svg selected");
+      $(target).children().attr('fill', "#20A5A1");  
+    };
+
+    
   }
 })
 
