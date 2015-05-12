@@ -8,10 +8,11 @@ Template.landing.events({
     
     if (postalCode) {
       Session.setPersistent("postalCode", postalCode);
+    } 
       Router.go("/tabs/one");  
-    } else {
-      alert('Please set your postal code');
-    }
+    // else {
+    //   alert('Please set your postal code');
+    // }
     
   }
 })
