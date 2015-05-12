@@ -34,5 +34,11 @@ Template.tabsOne.onRendered(function(){
 });
 
 Template.tabsOne.events({
+  'click svg': function( e, tpl ){
+    
+    var target = e.currentTarget;
+    console.log(target); 
+    $(target).children().attr('fill', '#77CF92');
+  }
 })
 
