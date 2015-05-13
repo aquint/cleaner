@@ -47,12 +47,19 @@ $calm: #9e7ac2;
 	}
 }
 
-
-
-p.text-large{
-	font-size: 1.5em;
-	line-height: 1.1;
+p {
+  .text-large {
+    font-size: 1.5em;
+    line-height: 1.1;  
+  }
+	.text-medium {
+    font-size: 1.1em;
+    line-height: 0.9;   
+  }
 }
+
+
+
 .no-padding-top{
 	padding-top: 0 !important;
 }
