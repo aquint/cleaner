@@ -1,3 +1,7 @@
+Template.home.onCreated(function(){
+  Session.set('hasHeader', false);
+})
+
 Template.home.onRendered(function(){
   $('#homeTransition').velocity("transition.swoopIn", function(){});
 })
