@@ -1,0 +1,73 @@
+.mist {
+  background-color: green;
+}
+
+.free {
+  border-bottom: none !important;
+  background: #3498db !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+.large {
+  font-size: 3em;
+}
+
+.util-padding {
+  padding-top: 3rem !important;
+}
+
+.saved:before {
+  line-height: normal !important;
+}
+.home{
+	background-color: #3498db ;
+	color: #fff;
+	h1,h2,h3,h4,h5,p,a,div{
+		color: #fff;
+	}
+	.field input[type=text]{
+	  margin-top: 5px;
+	  outline: none;
+	  border: none;
+	  height: 40px;
+	  line-height: 40px;
+	}
+	.ui.divider{
+		color: #fff;
+	}
+	.ui.divider::before, .ui.divider::after{
+		border-color: #fff;
+	}
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.no-padding-y {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+// $border: #38AF62;
+// $background: #65D07C;
+// $base: #99FFB1;
+// $text: white;
+
+// .bar.bar-stable {
+//   border-color: $border !important;
+//   background-color: $background !important;
+//   background-image: linear-gradient(0deg, $base, $base 50%, transparent 50%) !important;
+//   color: $text;
+// }

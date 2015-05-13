@@ -1,10 +1,10 @@
-Router.onBeforeAction(function() {
-  if (!Meteor.user()) {
-    this.render('authenticate');
-  } else {
-    this.next();
-  }
-});
+// Router.onBeforeAction(function() {
+//   if (!Meteor.user()) {
+//     this.render('authenticate');
+//   } else {
+//      this.next();
+//   }
+// });
 
 Router.configure({
   layoutTemplate: "applicationLayout"
@@ -12,7 +12,14 @@ Router.configure({
 
 Router.route('/', {
   template: "home",
-  name: "home"
+  name: "home",
+  layoutTemplate: "homeLayout"
+  // onBeforeAction: function() {
+  //   var postalCode = Session.get('postalCode');
+  //   if (postalCode) {
+  //     Router.go("/tabs/one");
+  //   }
+  // }
 });
 
 Router.route('/authenticate', {
@@ -20,23 +27,48 @@ Router.route('/authenticate', {
   name: "authenticate"
 });
 
-Router.route('search');
-Router.route('new');
+Router.map(function() {
+  this.route('tabs.one', {path: '/tabs/one', layoutTemplate: 'tabsLayout'});
+  this.route('tabs.two', {path: '/tabs/two', layoutTemplate: 'tabsLayout'});
+  this.route('tabs.three', {path: '/tabs/three', layoutTemplate: 'tabsLayout'});
 
-Router.route('/show/:id', {
-  // this template will be rendered until the subscriptions are ready
-  loadingTemplate: 'loading',
-
-  waitOn: function () {
-    // return one handle, a function, or an array
-    return Meteor.subscribe('decision', this.params.id);
-  },
-
-  data: function() {
-    return Decisions.findOne(this.params.id);
-  },
-
-  action: function () {
-    this.render('show');
-  }  
+  // Subtabs in cleaner detail page
+  this.route('tabs.two.cleaner-detail.about', {
+    path: '/tabs/two/cleaner-detail/about', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailAbout': {to: "subtabs"}
+    }
+  });
+  this.route('tabs.two.cleaner-detail.pricing', {
+    path: '/tabs/two/cleaner-detail/pricing', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailPricing': {to: "subtabs"}
+    }
+  });
+  this.route('tabs.two.cleaner-detail.book', {
+    path: '/tabs/two/cleaner-detail/book', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailBook': {to: "subtabs"}
+    }
+  });
+  this.route('tabs.two.cleaner-detail.reviews', {
+    path: '/tabs/two/cleaner-detail/reviews', 
+    layoutTemplate: 'tabsLayout', 
+    template: "tabsTwoCleanerDetail",
+    yieldTemplates: {
+      'tabsTwoCleanerDetailReviews': {to: "subtabs"}
+    }
+  });
 });
+  
+
+
+
+
+

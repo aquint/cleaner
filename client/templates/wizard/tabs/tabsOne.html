@@ -1,0 +1,118 @@
+<template name="tabsOne">
+  {{#ionView}}
+    {{> _tabsHeader}}
+
+    {{#ionContent class="ui grid"}}
+      <div class="row">
+        <div class="column">
+          <div class="ui icon message">
+            <i class="transparent blue home icon"></i>
+            <div class="content">
+              <div class="header">
+                Your Clean
+              </div>
+              <p>First, we need to learn a bit about your home.</p>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <p>How many rooms are in your home?</p>
+          
+            <p>{{bedroomCounter}} {{bedroomText}}</p>
+            <div class="ui buttons">
+              <div data-minus-bedroom class="ui button">Minus</div>
+              <div class="or"></div>
+              <div data-plus-bedroom class="ui positive button">Plus</div>
+            </div>
+          <br><br>
+          <p>What about bathrooms?</p>
+          
+            <p>{{bathroomCounter}} {{bathroomText}}</p>
+            <div class="ui buttons">
+              <div data-minus-bathroom class="ui button">Minus</div>
+              <div class="or"></div>
+              <div data-plus-bathroom class="ui positive button">Plus</div>
+            </div>
+          
+        </div>  
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="ui message">
+            <div class="header">Add any extra tasks you'd like.</div>  
+            <p>Extra tasks will add time to your clean.</p>
+          </div>  
+          <div class="ui grid">
+            <div class="row">
+              <div class="center aligned eight wide column">
+                <img src="/oven5.svg" class="svg custom-icon">
+                <p>Oven cleaning</p>
+              </div>
+              <div class="center aligned eight wide column">
+                <img src="/fridge.svg" class="svg custom-icon">
+                <p>Fridge cleaning</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="center aligned eight wide column">
+                <img src="/opened17.svg" class="svg custom-icon">
+                <p>Interior Windows</p>
+              </div>
+              <div class="center aligned eight wide column">
+                <img src="/cupboard.svg" class="svg custom-icon">
+                <p>Cupboards</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="center aligned eight wide column">
+                <img src="/brick1.svg" class="svg custom-icon">
+                <p>Interior Walls</p>
+              </div>
+              <div class="center aligned eight wide column">
+                <img src="/laundry.svg" class="black svg custom-icon">
+                <p>Laundry</p>
+              </div>
+            </div>
+            <div class="no-padding-bottom row">
+              <div class="center aligned column">
+                <div class="ui message">
+                  <div class="header">We've estimated a reservation.</div>  
+                  <p>We recommend <b>{{recommendedHours}}</b> hours based on our experience.</p>
+
+                  <p>Your reserved time: <b>{{hoursCounter}}</b> {{hoursText}}</p>
+                  <div class="ui buttons">
+                  <div data-minus-hour class="ui button">Minus</div>
+                    <div class="or"></div>
+                    <div data-plus-hour class="ui positive button">Plus</div>
+                  </div>    
+
+                </div>  
+              </div>
+            </div>
+            <div class="no-padding-y row">
+              <div class="column">
+              <div class="ui yellow icon message">
+                  <i class="clock icon"></i>
+                  <div class="content">
+                    <div class="header">
+                      Note
+                    </div>
+                    <p>You're only charged for the time spent cleaning. If your cleaner finishes before your reserved time ends, you won't be charged for the difference.</p>
+                  </div>
+                </div>
+              </div>  
+            </div>
+            <div class="no-margin-top button button-full button-calm">
+              Choose Cleaner
+            </div>
+          </div>
+        </div>  
+      </div>  
+
+      {{/ionContent}}
+
+    {{> _tabs}}
+  {{/ionView}}
+</template>

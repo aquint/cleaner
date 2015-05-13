@@ -1,5 +1,5 @@
-<template name="applicationLayout">
-  {{#ionBody}}
+<template name="homeLayout">
+    {{#ionBody}}
 
     {{#ionSideMenuContainer side="left"}}
 
@@ -12,7 +12,7 @@
           <div class="content has-header">
             <div class="list">
               
-              <a data-ion-menu-close href="#{">
+              <a data-ion-menu-close href="#">
                 <div class="item item-icon-right">
                   {{> ionIcon icon="ios-arrow-right"}} Home
                 </div>
@@ -32,7 +32,7 @@
 
       {{#ionSideMenuContent}}
 
-        {{> ionNavBar}}
+        {{> ionNavBar class="free"}}
 
         {{#ionNavView}}
           {{> yield}}
@@ -44,4 +44,3 @@
 
   {{/ionBody}}
 </template>
-
