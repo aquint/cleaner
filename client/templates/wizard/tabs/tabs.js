@@ -29,11 +29,11 @@ Template.tabsOne.events({
     if (contains) {
       // lets remove selected and restore the original classes
       $(target).attr("class", "svg custom-icon replaced-svg")
-      $(target).children().attr('fill', "#000");  
+      $(target).children().attr('fill', "#fff");  
     } else {
       // lets add selected
       $(target).attr("class", "svg custom-icon replaced-svg selected");
-      $(target).children().attr('fill', "#20A5A1");  
+      $(target).children().attr('fill', "#9e7ac2");  
     };
     Session.set('extras', $('svg.selected').length);
   },

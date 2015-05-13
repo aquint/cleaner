@@ -1,3 +1,8 @@
+$positive: #2d3941 !default;
+$main-dark: #2d3941 !default;
+$main-light: #3a4954 !default; 
+$calm: #9e7ac2 !default;
+
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
 
@@ -5,3 +10,19 @@
   bottom: 0px !important;
 }
 
+body, .ionic-body,h1,h2,h3,h4,h5,h6,p,a,button{
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+}
+h1,h2,h3,h4,h5,h6,.header{
+	color: #fff;
+}
+p{
+	color: rgba(255,255,255,0.7)
+}
+body, .ui.grid{
+	background-color: $main-dark;
+}
+.ui.message{
+	background-color: $main-light;
+}

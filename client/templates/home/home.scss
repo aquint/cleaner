@@ -1,13 +1,21 @@
 .button-full-width{
 	width: 100%;
 }
+.button.button-positive{
+	border-radius: 30px;
+	font-size: 1.1em;
+	text-transform: uppercase;
+}
+.button.button-positive.button-cleaner.active{
+	background-color: #8e44ad;
+}
 .button.button-positive.button-cleaner{
-	background-color: #f1c40f;
-	border-color: #f1c40f;
+	background-color: #9e7ac2;
+	border-color: #9e7ac2;
 }
 .button.button-positive.button-login{
-	background-color: #34495e;
-	border-color: #34495e;
+	background-color: #9e7ac2;//3a4954
+	border-color: #9e7ac2;
 }
 .mist {
   background-color: green;
@@ -15,7 +23,7 @@
 
 .free {
   border-bottom: none !important;
-  background: #3498db !important;
+  background: #2d3941 !important;
 }
 
 .transparent {
@@ -34,10 +42,15 @@
   line-height: normal !important;
 }
 .home{
-	background-color: #3498db ;
+	background-color: #2d3941 ;
 	color: #fff;
 	h1,h2,h3,h4,h5,p,a,div{
-		color: #fff;
+		font-weight: 700;
+		color: rgba(255,255,255,0.5);
+	}
+	h1{
+		font-weight: 700;
+		color: rgba(255,255,255,0.5);
 	}
 	.field input[type=text]{
 	  margin-top: 5px;

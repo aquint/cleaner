@@ -1,12 +1,30 @@
+$calm: #9e7ac2;
+.ui.purple.message{
+	background-color: #8e44ad;
+	color: #fff;
+	.header{
+		color: #fff;
+		text-transform: uppercase;
+	}
+	.icon:not(.close){
+		opacity: 1;
+	}
+}
 .custom-icon {
   width: 157px;
   height: 115px;
+  fill: #fff;
 }
 
 .selected-svg {
-  fill: #6BB6C2;
+  fill: #9e7ac2;
 }
-
+.ui.positive.button{
+	background-color: $calm !important;
+}
+.ui.button{
+	background-color: #fff !important;
+}
 /*=== Tabs Default Style ===*/
 	.top--tabs.tabs-top.tabs-striped .tab-item.active{
 		border-width: 0px 0px 4px 0px !important;
@@ -16,7 +34,7 @@
 	}
 	.tabs-striped.top--tabs.tabs-top > .tabs, .tabs.tabs-top{
 		border-bottom: none !important;
-		background-color: #0c60ee;
+		background-color: $calm;
 	}
 	.top--tabs .tab-item{
 		font-weight: 800;
