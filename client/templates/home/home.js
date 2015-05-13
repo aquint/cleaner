@@ -20,3 +20,4 @@ Template.landing.events({
     
   }
 })
+
