@@ -36,6 +36,11 @@ Template.tabsOne.events({
       $(target).children().attr('fill', "#20A5A1");  
     };
     Session.set('extras', $('svg.selected').length);
+  },
+  //
+  'click [data-pass="choose-cleaner"]': function() {
+    // do some code
+    console.log('lmfao');
   }
 })
 
