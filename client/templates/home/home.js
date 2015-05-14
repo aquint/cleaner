@@ -15,8 +15,6 @@ Template.landing.events({
     }
 
       Router.go("/tabs/one");
-    
-    }); 
       
     // else {
     //   alert('Please set your postal code');
