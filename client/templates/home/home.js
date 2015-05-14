@@ -14,9 +14,8 @@ Template.landing.events({
       Session.setPersistent("postalCode", postalCode);
     }
 
-      Router.go("/tabs/one");
+    Router.go("/tabs/one");
     
-    }); 
       
     // else {
     //   alert('Please set your postal code');

@@ -1,11 +1,9 @@
 Template.tabsOne.onRendered(function(){
   imgToSvg();
+  Session.set('bedrooms', 1);
+  Session.set('bathrooms', 1);
+  Session.set('hours', 1);
 });
-
-Template.tabsLayout.onRendered(function(){
-})
-
-
 
 Template.tabsOne.helpers({
   'recommendedHours': function() {
@@ -13,19 +11,100 @@ Template.tabsOne.helpers({
     var rooms = Session.get('bedrooms');
     var baths = Session.get('bathrooms');
     var extras = Session.get('extras');
+
+    Session.set('totalTime', rooms + baths + extras)
     
-    return rooms + baths + extras;
+    return Session.get('totalTime');
   }
 })
 
+
+Template.tabsOne.helpers({
+  'bedroomCounter': function() {
+    return Session.get('bedrooms');
+  },
+  'bedroomText': function() {
+    var plural = Session.get('bedrooms');
+    if (plural == 1) {
+      return "bedroom"
+    } else {
+      return "bedrooms"
+    }
+  },
+  'bathroomCounter': function() {
+    return Session.get('bathrooms');
+  },
+  'bathroomText': function() {
+    var plural = Session.get('bathrooms');
+    if (plural == 1) {
+      return "bathroom"
+    } else {
+      return "bathrooms"
+    }
+  },
+  'hoursCounter': function() {
+    return Session.get('hours');
+  },
+  'hoursText': function() {
+    var plural = Session.get('hours');
+    if (plural == 1) {
+      return "hour"
+    } else {
+      return "hours"
+    }
+  }
+});
+
 Template.tabsOne.events({
+  'click [data-plus-bedroom]': function() {
+    var count = Session.get('bedrooms');
+    count++;
+    Session.set('bedrooms', count);
+  },
+  'click [data-minus-bedroom]': function() {
+    var count = Session.get('bedrooms');
+    if (count <= 1) {
+      // do nothing
+    } else {
+      count--;  
+    }
+    Session.set('bedrooms', count);
+  },
+  'click [data-plus-bathroom]': function() {
+    var count = Session.get('bathrooms');
+    count++;
+    Session.set('bathrooms', count);
+  },
+  'click [data-minus-bathroom]': function() {
+    var count = Session.get('bathrooms');
+    if (count <= 1) {
+      // do nothing
+    } else {
+      count--;  
+    }
+    Session.set('bathrooms', count);
+  },
+  'click [data-plus-hour]': function() {
+    var count = Session.get('hours');
+    count++;
+    Session.set('hours', count);
+  },
+  'click [data-minus-hour]': function() {
+    var count = Session.get('hours');
+    if (count <= 1) {
+      // do nothing
+    } else {
+      count--;  
+    }
+    Session.set('hours', count);
+  },
   'click svg': function( e, tpl ){
     // target the svg object
     var target = e.currentTarget;
 
     // make an array of all its classes
     var classes = $(target).attr('class').split(' ');
-  
+
     // check to see if that array contains the class: selected
     var contains = _.contains(classes, "selected");
 
@@ -40,11 +119,11 @@ Template.tabsOne.events({
     };
     Session.set('extras', $('svg.selected').length);
   },
-  //
   'click [data-pass="choose-cleaner"]': function() {
-    // do some code
+    // we want to use all the session data somehow
   }
 })
+
 
 function imgToSvg() {
    /*

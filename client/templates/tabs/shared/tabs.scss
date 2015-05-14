@@ -1,5 +1,6 @@
 $calm: #9e7ac2;
 $main-dark: #2d3941 !default;
+
 .ui.purple.message{
 	background-color: #8e44ad;
 	color: #fff;
@@ -108,10 +109,16 @@ a.content{
 		line-height: 1;
 	}
 }
-.cleaners-list .card{
-	.header, .meta{
-		width: 85%;
-	}
+
+.cleaners-list {
+  background-color: #2D3941 !important;
+  .card {
+    background-color: #9E7AC2 !important;
+	 .header, .meta {
+     color: white !important;
+	 	 width: 85%;
+	  } 
+  }
 }
 /*== Slider ==*/
 .noUi-horizontal .noUi-handle {
