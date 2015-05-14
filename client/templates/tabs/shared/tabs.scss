@@ -108,16 +108,28 @@ a.content{
 	}
 }
 
-.cleaners-list {
+.cleaners-list-variation {
   background-color: #2D3941 !important;
   .card {
-    background-color: #9E7AC2 !important;
-	 .header, .meta {
+    background-color: #F362BC !important;
+	 .header, .meta, .description {
      color: white !important;
-	 	 width: 85%;
+	 	 // width: 85%;
 	  } 
   }
 }
+
+.cleaners-list {
+  background-color: #384852 !important;
+  .card {
+    background-color: #9E7AC2 !important;
+   .header, .meta {
+     color: white !important;
+     width: 85%;
+    } 
+  }
+}
+
 /*== Slider ==*/
 .noUi-horizontal .noUi-handle {
   width: 34px;
@@ -131,3 +143,4 @@ a.content{
 .noUi-handle::before, .noUi-handle::after{
 	top: 9px;
 }
+
