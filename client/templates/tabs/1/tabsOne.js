@@ -121,6 +121,7 @@ Template.tabsOne.events({
   },
   'click [data-pass="choose-cleaner"]': function() {
     // we want to use all the session data somehow
+    Router.go("/tabs/two")
   }
 })
 

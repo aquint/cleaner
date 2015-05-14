@@ -1,9 +1,44 @@
 <template name="tabsThree">
-  {{> _tabsHeader}}
+{{> _tabsHeader}}
 
-  {{#ionContent class="padding"}}
-    <h1>Tab 3</h1>
-  {{/ionContent}}
+	{{#ionContent class=""}}
+	<div class="ui centered grid">
+		<div class="row">
+			<div class="twelve wide column">
+				<h3 class="margin-top">Available Cleaners</h3>
+				<p class="text-large">Listed below are cleaning businesses available in your area.</p>
+			</div>
+		</div>
+		<div class="ui divider"></div>
+		<div class="row no-padding-top">
+			<div class="twelve wide column">
 
-  {{> _tabs}}
+				{{!-- <p><small>You can edit the price range using the slider.</small></p>
+				<div id="slider"></div> --}}
+        
+        <h4 class="margin-top">Alpha Stage</h4>
+        <p class="text-medium">Swipper is currently in its <b>alpha</b> stage, and only supports a few proven industry leaders.</p>
+
+			</div>
+		</div>
+		<div class="ui divider"></div>
+	</div>
+	<div class="ui two doubling cards cleaners-list">
+		<div class="card">
+			<a href="/tabs/two/cleaner-detail/about" class="content">
+					<img class="ui avatar image card-avatar" src="http://semantic-ui.com/images/wireframe/square-image.png">
+					<div class="header">Pocket Rocket Cleaners</div>
+					<div class="meta"><strong>Manager: Annie Smith</strong></div>
+					<p class="pricing"><span>$27</span>/<small>hr</small></p>
+			</a>
+			<div class="extra content">
+		    <div class="ui star rating" data-rating="2"></div><span style="margin-left:  10px;">3.6/4 43 reviews</span>
+		  </div>
+		</div>
+	</div>
+	{{/ionContent}}
+
+	{{> _tabs}}
 </template>
+
+
