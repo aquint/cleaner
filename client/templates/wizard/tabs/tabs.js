@@ -3,7 +3,6 @@ Template.tabsOne.onRendered(function(){
 });
 
 Template.tabsLayout.onRendered(function(){
-  $('.sampleClass').velocity("transition.slideRightIn", {});  
 })
 
 
@@ -44,7 +43,6 @@ Template.tabsOne.events({
   //
   'click [data-pass="choose-cleaner"]': function() {
     // do some code
-    console.log('lmfao');
   }
 })
 

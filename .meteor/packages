@@ -13,7 +13,6 @@ semantic:ui-css
 service-configuration
 msavin:mongol
 fortawesome:fontawesome
-velocityjs:velocityjs
 aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
