@@ -3,7 +3,7 @@ Template.home.onCreated(function(){
 })
 
 Template.home.onRendered(function(){
-  $('#homeTransition').velocity("transition.swoopIn", function(){});
+  $('#home').velocity("transition.slideDownIn", function(){});
 })
 
 Template.landing.events({
@@ -12,8 +12,15 @@ Template.landing.events({
     
     if (postalCode) {
       Session.setPersistent("postalCode", postalCode);
-    } 
-      Router.go("/tabs/one");  
+    }
+
+    $('#home').velocity("transition.slideDownOut", {
+      duration: 100,
+      complete: function() {
+        Router.go("/tabs/one");
+      }
+    }); 
+      
     // else {
     //   alert('Please set your postal code');
     // }
