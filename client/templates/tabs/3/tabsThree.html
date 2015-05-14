@@ -1,39 +1,69 @@
 <template name="tabsThree">
-{{> _tabsHeader}}
+	{{> _tabsHeader}}
 
 	{{#ionContent class=""}}
 	<div class="ui centered grid">
 		<div class="row">
-			<div class="twelve wide column">
-				<h3 class="margin-top">Available Cleaners</h3>
-				<p class="text-large">Listed below are cleaning businesses available in your area.</p>
+			<div class="fourteen wide column">
+				<h3 class="margin-top">Link Your Credit Card</h3>
+				<div class='item item-divider'>Card Info: </div>
+				<label class='item item-input card-num-input'>
+					<i  class=" input-label fa fa-credit-card" style="width: initial;"></i>
+					<input type='tel' placeholder='Credit Card Number'>
+				</label>
+				<label class='item item-input card-cvc-input'>
+					<input type='tel'  placeholder='CVC'>
+					<i class="icon" style='width: 40px; text-align: center;'></i>
+				</label>
+				<label class='item item-input card-exp-input'>
+					<input type='tel' placeholder='MM/YYYY'>
+					<i  class="icon" style='width: 40px; text-align: center;'></i>
+				</label>
 			</div>
 		</div>
 		<div class="ui divider"></div>
 		<div class="row no-padding-top">
-			<div class="twelve wide column">
+			<div class="fourteen wide column">
 
-				{{!-- <p><small>You can edit the price range using the slider.</small></p>
-				<div id="slider"></div> --}}
-        
-        <h4 class="margin-top">Alpha Stage</h4>
-        <p class="text-medium">Swipper is currently in its <b>alpha</b> stage, and only supports a few proven industry leaders.</p>
+				<label class="item item-input">
+					<span class="input-label">Address</span>
+					<input type="text">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">City</span>
+					<input type="text">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Postal Code</span>
+					<input type="text">
+				</label>
 
 			</div>
 		</div>
 		<div class="ui divider"></div>
 	</div>
-	<div class="ui two doubling cards cleaners-list">
-		<div class="card">
-			<a href="/tabs/two/cleaner-detail/about" class="content">
-					<img class="ui avatar image card-avatar" src="http://semantic-ui.com/images/wireframe/square-image.png">
-					<div class="header">Pocket Rocket Cleaners</div>
-					<div class="meta"><strong>Manager: Annie Smith</strong></div>
-					<p class="pricing"><span>$27</span>/<small>hr</small></p>
-			</a>
-			<div class="extra content">
-		    <div class="ui star rating" data-rating="2"></div><span style="margin-left:  10px;">3.6/4 43 reviews</span>
-		  </div>
+	<div class="ui centered grid">
+		<div class="fourteen wide column">
+			<label class="item item-input">
+				<span class="input-label">First Name</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Last Name</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Mobile</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Email</span>
+				<input type="email">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Password</span>
+				<input type="password">
+			</label>
 		</div>
 	</div>
 	{{/ionContent}}
