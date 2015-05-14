@@ -14,7 +14,7 @@ Template.landing.events({
       Session.setPersistent("postalCode", postalCode);
     }
 
-    $('#home').velocity("transition.slideDownOut", {
+    $('#home').velocity("transition.slideLeftOut", {
       duration: 100,
       complete: function() {
         Router.go("/tabs/one");

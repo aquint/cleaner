@@ -2,8 +2,8 @@ Template.tabsOne.onRendered(function(){
   imgToSvg();
 });
 
-Template._tabsHeader.onRendered(function(){
-  //$('.tabOne').velocity("transition.slideRightIn", {});  
+Template.tabsLayout.onRendered(function(){
+  $('.sampleClass').velocity("transition.slideRightIn", {});  
 })
 
 
