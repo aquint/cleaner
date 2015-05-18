@@ -21,26 +21,47 @@ Router.map(function() {
   this.route('tabs.three', {path: '/tabs/three', layoutTemplate: 'tabsLayout'});
 
   // Subtabs in cleaner detail page
-  this.route('tabs.two.cleaner-detail.about', {
-    path: '/tabs/two/cleaner-detail/about', 
+  this.route('tabs.two.cleaner-detail.about/:id', {
+    path: '/tabs/two/cleaner-detail/about/:id', 
     layoutTemplate: 'tabsLayout', 
     template: "tabsTwoCleanerDetail",
+    waitOn: function () {
+      // return one handle, a function, or an array
+      return remote.subscribe('vendors', this.params.id); 
+    },
+    data: function() {
+      return Vendors.findOne(this.params.id);
+    },
     yieldTemplates: {
       'tabsTwoCleanerDetailAbout': {to: "subtabs"}
     }
   });
-  this.route('tabs.two.cleaner-detail.pricing', {
-    path: '/tabs/two/cleaner-detail/pricing', 
+  this.route('tabs.two.cleaner-detail.pricing/:id', {
+    path: '/tabs/two/cleaner-detail/pricing/:id', 
     layoutTemplate: 'tabsLayout', 
     template: "tabsTwoCleanerDetail",
+    waitOn: function () {
+      // return one handle, a function, or an array
+      return remote.subscribe('vendors', this.params.id); 
+    },
+    data: function() {
+      return Vendors.findOne(this.params.id);
+    },
     yieldTemplates: {
       'tabsTwoCleanerDetailPricing': {to: "subtabs"}
     }
   });
-  this.route('tabs.two.cleaner-detail.book', {
-    path: '/tabs/two/cleaner-detail/book', 
+  this.route('tabs.two.cleaner-detail.book/:id', {
+    path: '/tabs/two/cleaner-detail/book/:id', 
     layoutTemplate: 'tabsLayout', 
     template: "tabsTwoCleanerDetail",
+    waitOn: function () {
+      // return one handle, a function, or an array
+      return remote.subscribe('vendors', this.params.id); 
+    },
+    data: function() {
+      return Vendors.findOne(this.params.id);
+    },
     yieldTemplates: {
       'tabsTwoCleanerDetailBook': {to: "subtabs"}
     }
@@ -61,3 +82,12 @@ Router.map(function() {
     }
   });
 });
+
+
+Template._subTabs.helpers({
+  id: function() {
+    var url = location.href;
+    var array = url.split('/');
+    return array[array.length-1];
+  }
+})
