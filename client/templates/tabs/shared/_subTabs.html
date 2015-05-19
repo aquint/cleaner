@@ -1,8 +1,9 @@
 <template name="_subTabs">
     {{#ionTabs style="android" class="tabs-background-positive tabs-color-light sub-tabs--tabs top--tabs"}}
-      {{> ionTab title="ABOUT" path="tabs.two.cleaner-detail.about"}}
+      {{> ionTab title="ABOUT" path="tabs.two.cleaner-detail.about/{{id}}"}}
       {{> ionTab title="REVIEWS" path="tabs.two.cleaner-detail.reviews/{{id}}"}}
       {{> ionTab title="PRICING" path="tabs.two.cleaner-detail.pricing/{{id}}"}}
-      {{> ionTab title="BOOK" path="tabs.two.cleaner-detail.book/{{id}}"}}
+      <a href="/tabs.two.cleaner-detail.book/{{id}}"><div class="tab-item" data-ion-tab>BOOK</div></a>
+      
     {{/ionTabs}}
 </template>
