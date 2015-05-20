@@ -3,7 +3,7 @@
 var remote = DDP.connect("http://localhost:3000/");
 Vendors = new Mongo.Collection('vendors', remote);
 
-Template.tabsLayout.helpers({
+Template.tabsTwo.helpers({
   vendor: function() {
     return Vendors.find({});
   }
@@ -19,6 +19,10 @@ VendorController = RouteController.extend({
   action: function() {
     this.render('tabsTwo');
     //this.render('tabsTwoCleanerDetailAbout', { to: 'subtabs' });
+  },
+  show: function() {
+    this.render('tabsTwoCleanerDetail');
+    this.render('tabsTwoCleanerDetailAbout', { to: 'subtabs' });
   }
 });
 
@@ -26,7 +30,16 @@ VendorController = RouteController.extend({
 
 Router.route('/vendors', {
   name: 'vendors',
+  //path: '/vendors',
   controller: 'VendorController',
   where: 'client',
   action: 'action'
+});
+
+Router.route('/vendor/:id', {
+  name: 'vendor',
+  controller: 'VendorController',
+  where: 'client',
+  action: 'show',
+  data: function() { return Vendors.findOne(this.params.id); }
 });

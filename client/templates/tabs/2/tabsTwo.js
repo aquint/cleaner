@@ -1,5 +1,5 @@
 Template.tabsTwo.onRendered(function(){
-  Session.set('currentTab', 'tabs.two');
+  Session.set('currentTab', 'vendors');
 
   // Session.setDefault("slider", [20, 80]);
 

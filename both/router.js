@@ -27,7 +27,14 @@ Router.route('/authenticate', {
   name: "authenticate"
 });
 
+// tab one
 
+Router.route('/clean', {
+  name: 'clean',
+  layoutTemplate: "tabsLayout",
+  template: "tabsOne",
+  action: function() { this.render(); }
+});
   
 
 

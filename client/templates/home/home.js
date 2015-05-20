@@ -14,7 +14,7 @@ Template.landing.events({
       Session.setPersistent("postalCode", postalCode);
     }
 
-    Router.go("/vendor");
+    Router.go("/clean");
     
       
     // else {
