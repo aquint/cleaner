@@ -20,9 +20,13 @@ VendorController = RouteController.extend({
     this.render('tabsTwo');
     //this.render('tabsTwoCleanerDetailAbout', { to: 'subtabs' });
   },
-  show: function() {
+  about: function() {
     this.render('tabsTwoCleanerDetail');
     this.render('tabsTwoCleanerDetailAbout', { to: 'subtabs' });
+  },
+  reviews: function() {
+    this.render('tabsTwoCleanerDetail');
+    this.render('tabsTwoCleanerDetailReviews', { to: 'subtabs' });
   }
 });
 
@@ -38,8 +42,18 @@ Router.route('/vendors', {
 
 Router.route('/vendor/:id', {
   name: 'vendor',
+  //path: 'about',
   controller: 'VendorController',
   where: 'client',
-  action: 'show',
+  action: 'about',
+  data: function() { return Vendors.findOne(this.params.id); }
+});
+
+Router.route('/vendor/:id/reviews', {
+  name: 'vendor.reviews',
+  //path: 'reviews',
+  controller: 'VendorController',
+  where: 'client',
+  action: 'reviews',
   data: function() { return Vendors.findOne(this.params.id); }
 });

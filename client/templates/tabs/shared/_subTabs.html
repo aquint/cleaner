@@ -1,8 +1,12 @@
 <template name="_subTabs">
     {{#ionTabs style="android" class="tabs-background-positive tabs-color-light sub-tabs--tabs top--tabs"}}
-      {{> ionTab title="ABOUT" path=this.about}}
-      {{> ionTab title="REVIEWS" path=this.reviews}}
-      {{> ionTab title="PRICING" path="vendors"}}
+      {{!-- {{> ionTab class="subtab-about" title="ABOUT" path="about"}}
+      {{> ionTab class="subtab-reviews" title="REVIEWS" path="reviews"}}
+      {{> ionTab class="subtab-pricing" title="PRICING" path="pricing"}}
+ --}}
+      <a class="tab-item subtab-about">ABOUT</a>  
+      <a href="/vendor/{{_id}}/reviews" class="tab-item subtab-reviews">REVIEWS</a>  
+      <a class="tab-item subtab-pricing">PRICING</a>  
 
     {{/ionTabs}}
 </template>
