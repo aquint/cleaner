@@ -9,10 +9,16 @@ Template.tabsTwoCleanerDetailAbout.onRendered(function(){
 function activate(value) {
   $('.tabs-cleaner').addClass('active');
 
-  var string = '.tabs-' + value; 
-  console.log(string);
-  check(string, String); 
-  $(string).addClass('active');
+  if ( value == "about" ) {
+    $(".subtab-about").addClass('active');  
+  };
+
+  if ( value == "reviews" ) {
+    $(".subtab-reviews").addClass('active');  
+  };
+
+  
+  
 }
 
 
